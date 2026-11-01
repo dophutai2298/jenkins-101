@@ -8,6 +8,12 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
+
+      stage('Check Python') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
